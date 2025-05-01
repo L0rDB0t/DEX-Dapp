@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniDEX | Interfaz Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>MiniDEX Interface</h1>
+        
+        <div class="card">
+            <h2>Información del Contrato</h2>
+            <p>Contrato desplegado en Sepolia:</p>
+            <p id="contractAddress">0xb551d5c0e5e9e9ef5ac7e3076a82677f98896504</p>
+        </div>
+
+        <div class="card">
+            <h2>Inicializar Pool de Liquidez</h2>
+            <div class="input-group">
+                <label for="initTokenAmount">Cantidad de Tokens (DAI)</label>
+                <input type="number" id="initTokenAmount" placeholder="Ej: 100">
+            </div>
+            <div class="input-group">
+                <label for="initEthAmount">Cantidad de ETH</label>
+                <input type="number" id="initEthAmount" placeholder="Ej: 0.1">
+            </div>
+            <button onclick="initPool()">Inicializar Pool</button>
+        </div>
+
+        <div class="card">
+            <h2>Intercambio (Swap)</h2>
+            <div class="input-group">
+                <label for="swapDirection">Dirección del Swap</label>
+                <select id="swapDirection">
+                    <option value="true">ETH → Tokens</option>
+                    <option value="false">Tokens → ETH</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="swapAmount">Cantidad</label>
+                <input type="number" id="swapAmount" placeholder="Ingrese la cantidad">
+            </div>
+            <button onclick="doSwap()">Ejecutar Swap</button>
+        </div>
+
+        <div class="card">
+            <h2>Reservas del Pool</h2>
+            <div class="reserves">
+                <div class="reserve-item">
+                    <p>ETH Reserve</p>
+                    <p class="reserve-value" id="ethReserve">0</p>
+                </div>
+                <div class="reserve-item">
+                    <p>Token Reserve</p>
+                    <p class="reserve-value" id="tokenReserve">0</p>
+                </div>
+            </div>
+            <button onclick="updateReserves()">Actualizar Reservas</button>
+        </div>
+    </div>
+</body>
+</html>
