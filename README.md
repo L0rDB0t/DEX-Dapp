@@ -1,7 +1,4 @@
-markdown
-# 🚀 MiniDEX - Interfaz Web3 para Swap de Tokens
-
-![MiniDEX Preview](https://i.imgur.com/JyhxQN2.png)  
+# 🚀 MiniDEX - Interfaz Web3 para Swap de Tokens  
 *Interfaz descentralizada para intercambio de tokens en Ethereum (Sepolia Testnet)*
 
 ## 🌟 Características Principales
